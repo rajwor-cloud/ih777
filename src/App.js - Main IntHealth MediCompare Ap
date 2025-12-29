@@ -1,0 +1,58 @@
+// src/App.js - Main IntHealth MediCompare App
+import React, { useState } from 'react';
+import './App.css';
+import hospitalsData from './data/hospitals.json';
+import SearchPanel from './components/SearchPanel';
+import ResultsPanel from './components/ResultsPanel';
+import Header from './components/Header';
+import Footer from './components/Footer';
+
+function App() {
+  const [filteredHospitals, setFilteredHospitals] = useState(hospitalsData);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filters, setFilters] = useState({
+    priceRange: [0, 20000],
+    accreditations: [],
+    cities: [],
+    insurance: false
+  });
+
+  const handleFilterChange = (newFilters) => {
+    setFilters(newFilters);
+    // Apply filters logic here
+    const filtered = hospitalsData.filter(hospital => {
+      const matchesSearch = hospital.treatment.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                           hospital.hospital.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesPrice = hospital.total >= newFilters.priceRange[0] && hospital.total <= newFilters.priceRange[1];
+      return matchesSearch && matchesPrice;
+    });
+    setFilteredHospitals(filtered);
+  };
+
+  return (
+    <div className="App">
+      <Header />
+      <main className="main-content">
+        <div className="container">
+          <div className="hero-section">
+            <h1>IntHealth MediCompare</h1>
+            <p>Compare medical treatment costs across India's top hospitals. Save 60-70% vs international prices.</p>
+          </div>
+          
+          <div className="app-grid">
+            <SearchPanel 
+              onFilterChange={handleFilterChange}
+              searchTerm={searchTerm}
+              setSearchTerm={setSearchTerm}
+              filters={filters}
+            />
+            <ResultsPanel hospitals={filteredHospitals} />
+          </div>
+        </div>
+      </main>
+      <Footer />
+    </div>
+  );
+}
+
+export default App;
