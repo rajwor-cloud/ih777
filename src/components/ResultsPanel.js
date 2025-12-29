@@ -1,4 +1,4 @@
-// src/components/ResultsPanel.js
+
 import React from 'react';
 import HospitalCard from './HospitalCard';
 
