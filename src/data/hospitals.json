@@ -1,0 +1,57 @@
+// src/data/hospitals.json
+[
+  {
+    "id": 1,
+    "hospital": "Apollo Hospitals, Chennai",
+    "city": "Chennai",
+    "treatment": "Knee Replacement",
+    "rating": 4.8,
+    "reviews": 1278,
+    "total": 11680,
+    "surgery": 6500,
+    "medication": 1200,
+    "hospitalStay": 2800,
+    "days": 5,
+    "travel": 800,
+    "accommodation": 380,
+    "accreditations": { "jci": true, "nabh": true },
+    "waitTime": "2-3 days",
+    "insurance": ["Cigna", "Allianz"]
+  },
+  {
+    "id": 2,
+    "hospital": "Fortis Memorial, Gurugram",
+    "city": "Gurugram",
+    "treatment": "Knee Replacement",
+    "rating": 4.7,
+    "reviews": 956,
+    "total": 13250,
+    "surgery": 7200,
+    "medication": 1400,
+    "hospitalStay": 3200,
+    "days": 5,
+    "travel": 950,
+    "accommodation": 500,
+    "accreditations": { "jci": true, "nabh": true },
+    "waitTime": "1-2 days",
+    "insurance": ["Bupa", "Cigna"]
+  },
+  {
+    "id": 3,
+    "hospital": "Manipal Hospital, Bangalore",
+    "city": "Bangalore",
+    "treatment": "Knee Replacement",
+    "rating": 4.6,
+    "reviews": 823,
+    "total": 12450,
+    "surgery": 6800,
+    "medication": 1100,
+    "hospitalStay": 3000,
+    "days": 5,
+    "travel": 850,
+    "accommodation": 700,
+    "accreditations": { "jci": false, "nabh": true },
+    "waitTime": "3-4 days",
+    "insurance": ["Allianz"]
+  }
+]
