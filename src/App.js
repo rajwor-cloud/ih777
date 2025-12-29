@@ -1,4 +1,3 @@
-// src/App.js - Main IntHealth MediCompare App
 import React, { useState } from 'react';
 import './App.css';
 import hospitalsData from './data/hospitals.json';
