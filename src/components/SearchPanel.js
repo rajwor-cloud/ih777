@@ -1,4 +1,4 @@
-// src/components/SearchPanel.js
+
 import React from 'react';
 
 const SearchPanel = ({ onFilterChange, searchTerm, setSearchTerm, filters }) => {
